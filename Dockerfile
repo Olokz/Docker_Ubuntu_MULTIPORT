@@ -2,7 +2,8 @@ FROM ubuntu:14.04
 
 MAINTAINER Olokz "https://github.com/Olokz"
 
-ENV PORT_SSH="22" \
+ENV ROOT_PASS=CHANGEME \
+    PORT_SSH="22" \
     PORT_1="21" \
     PORT_2="20" \
     PORT_3="80" \
@@ -19,7 +20,7 @@ RUN apt-get update
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
-RUN echo 'root:root' |chpasswd
+RUN echo "$ROOT_PASS" | passwd --stdin root
 
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
