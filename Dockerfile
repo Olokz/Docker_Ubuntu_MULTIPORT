@@ -2,18 +2,8 @@ FROM ubuntu:14.04
 
 MAINTAINER Olokz "https://github.com/Olokz"
 
-ENV ROOT_PASS="@hyujG667$r" \
-    PORT_SSH="22" \
-    PORT_1="21" \
-    PORT_2="20" \
-    PORT_3="80" \
-    PORT_4="443" \
-    PORT_5="587" \
-    PORT_6="8443" \
-    PORT_7="2243" \
-    PORT_8="7070" \
-    PORT_9="8547" \
-    PORT_10="9987"
+ENV ROOT_PASS="@hyujG667$r"
+
 
 RUN apt-get update
 
@@ -25,16 +15,33 @@ RUN echo root:"$ROOT_PASS" | chpasswd
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-EXPOSE $PORT_SSH
-EXPOSE $PORT_1
-EXPOSE $PORT_2
-EXPOSE $PORT_3
-EXPOSE $PORT_4
-EXPOSE $PORT_5
-EXPOSE $PORT_6
-EXPOSE $PORT_7
-EXPOSE $PORT_8
-EXPOSE $PORT_9
-EXPOSE $PORT_10
+EXPOSE 587/tcp
+EXPOSE 53/tcp
+EXPOSE 1023/tcp
+EXPOSE 12443/tcp
+EXPOSE 11443/tcp
+EXPOSE 11444/tcp
+EXPOSE 8443/tcp
+EXPOSE 8447/tcp
+EXPOSE 8880/tcp
+EXPOSE 80/tcp
+EXPOSE 443/tcp
+EXPOSE 21/tcp
+EXPOSE 22/tcp
+EXPOSE 25/tcp
+EXPOSE 110/tcp
+EXPOSE 995/tcp
+EXPOSE 993/tcp
+EXPOSE 143/tcp
+EXPOSE 106/tcp
+EXPOSE 3306/tcp
+EXPOSE 5432/tcp
+EXPOSE 9008/tcp
+EXPOSE 9080/tcp
+EXPOSE 137/udp
+EXPOSE 138/udp
+EXPOSE 139/tcp
+EXPOSE 445/tcp
+EXPOSE 1194/udp
 
 CMD    ["/usr/sbin/sshd", "-D"]
