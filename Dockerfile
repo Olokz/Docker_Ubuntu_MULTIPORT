@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Olokz "https://github.com/Olokz"
 
-ENV ROOT_PASS="CHANGEME" \
+ENV ROOT_PASS="@hyujG667$r" \
     PORT_SSH="22" \
     PORT_1="21" \
     PORT_2="20" \
