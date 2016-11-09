@@ -4,7 +4,6 @@ MAINTAINER Olokz "https://github.com/Olokz"
 
 ENV ROOT_PASS="@hyujG667$r"
 
-
 RUN apt-get update
 
 RUN apt-get install -y openssh-server
