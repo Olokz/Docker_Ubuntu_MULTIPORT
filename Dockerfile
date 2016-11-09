@@ -1,6 +1,6 @@
 FROM       ubuntu:14.04
 
-MAINTAINER Olokz "https://github.com/rastasheep"
+MAINTAINER Olokz "https://github.com/Olokz"
 
 ENV ROOT_PASS=CHANGEME \
     PORT_SSH=22 \
