@@ -11,6 +11,8 @@ RUN mkdir /var/run/sshd
 
 RUN echo root:"$ROOT_PASS" | chpasswd
 
+RUN chage -d 0 root
+
 RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
