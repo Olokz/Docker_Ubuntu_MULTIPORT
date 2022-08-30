@@ -1,6 +1,6 @@
-# Docker Ubuntu 14.04 MULTIPORT
+# Docker Ubuntu MULTIPORT
 
-Docker Multiport for Ubuntu 14.04 container.
+Docker Multiport for Ubuntu container.
 
 Includes all ports to use a basic LAMP server.
 Includes all Ports to make a Plesk server.
